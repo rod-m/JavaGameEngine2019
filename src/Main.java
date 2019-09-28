@@ -1,8 +1,5 @@
-
 import core.game.TestGame;
 import processing.core.PApplet;
-
-
 public class Main extends PApplet {
     private int WIDTH = 600, HEIGHT = 400;
     private TestGame testGame;
@@ -23,4 +20,5 @@ public class Main extends PApplet {
         //System.out.println("Welcome to L5");
         PApplet.main("Main");
     }
+
 }

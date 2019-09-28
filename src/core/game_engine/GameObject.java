@@ -2,7 +2,7 @@ package core.game_engine;
 import processing.core.PApplet;
 import processing.core.PVector;
 public class GameObject {
-    private PApplet parent;
+    public PApplet parent;
     public PVector position;
     public GameObject(){
 
@@ -15,4 +15,7 @@ public class GameObject {
         this.position.x += 2;
         parent.rect(this.position.x, this.position.y, 100,50);
     }
+
+
+
 }
