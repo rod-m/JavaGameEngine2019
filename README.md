@@ -1,4 +1,6 @@
 # JAVA GAME ENGINE
+![GitHub Logo](/images/game-engine.png)
+
 ## A Games Engine developed using the processing.org applet
 
 ###Processing
