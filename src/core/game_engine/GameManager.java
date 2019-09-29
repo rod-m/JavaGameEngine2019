@@ -1,7 +1,6 @@
 package core.game_engine;
 import processing.core.PApplet;
 import java.util.ArrayList;
-
 public class GameManager {
     private PApplet parent;
     private ArrayList<GameObject> game_objects;

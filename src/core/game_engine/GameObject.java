@@ -15,7 +15,4 @@ public class GameObject {
         this.position.x += 2;
         parent.rect(this.position.x, this.position.y, 100,50);
     }
-
-
-
 }
