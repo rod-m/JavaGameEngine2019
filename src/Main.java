@@ -13,12 +13,22 @@ public class Main extends PApplet {
     }
     public void draw(){
         background(0);
+        if(keyPressed){
+            testGame.keyPressed(key, keyCode);
+        }
         testGame.update();
 
     }
     public static void main(String args[]){
         //System.out.println("Welcome to L5");
         PApplet.main("Main");
+    }
+
+    public void keyReleased(){
+        testGame.keyReleased(key, keyCode);
+    }
+    public void keyPressed(){
+       // testGame.keyPressed(key, keyCode);
     }
 
 }
