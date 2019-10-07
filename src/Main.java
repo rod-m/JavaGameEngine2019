@@ -20,4 +20,10 @@ public class Main extends PApplet {
         //System.out.println("Welcome to L5");
         PApplet.main("Main");
     }
+    public void keyReleased(){
+        testGame.keyReleased(key, keyCode);
+    }
+    public void keyPressed(){
+        testGame.keyPressed(key, keyCode);
+    }
 }
