@@ -1,10 +1,12 @@
 package core.game_engine.input_commands;
 
 public class InputHandler implements MoveAble {
-    private Command leftCommand, rightCommand;
-    public InputHandler(Command left, Command right){
+    private Command leftCommand, rightCommand, upCommand, downCommand;
+    public InputHandler(Command left, Command right, Command up, Command down){
         leftCommand = left;
         rightCommand = right;
+        upCommand = up;
+        downCommand = down;
     }
 
     @Override
@@ -19,11 +21,11 @@ public class InputHandler implements MoveAble {
 
     @Override
     public void moveUp() {
-
+        upCommand.execute();
     }
 
     @Override
     public void moveDown() {
-
+        downCommand.execute();
     }
 }

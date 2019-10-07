@@ -22,7 +22,7 @@ public class Player extends GameObject implements MoveAble {
 
     @Override
     public void moveLeft() {
-        System.out.println("left?");
+        //System.out.println("left?");
         this.position.x -= 1;
     }
 
@@ -33,11 +33,11 @@ public class Player extends GameObject implements MoveAble {
 
     @Override
     public void moveUp() {
-
+        this.position.y -= 1;
     }
 
     @Override
     public void moveDown() {
-
+        this.position.y += 1;
     }
 }
