@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class BoxCollider2D extends Component {
     private boolean hasCollided = false;
     private Rectangle bounds;
+    public Rectangle getBounds() {
+        return this.bounds;
+    }
     private ArrayList<BoxCollider2D> otherColliders = new ArrayList<>();
 
     public ArrayList<BoxCollider2D> getOtherColliders() {
@@ -21,11 +24,12 @@ public class BoxCollider2D extends Component {
     }
     @Override
     public void update() {
-        //this.bounds.updateBounds(next_pos);
+        this.bounds.updateBounds(this.gameObject.next_position.x, this.gameObject.next_position.y);
+
     }
     public void check_Collisions(BoxCollider2D other){
         // todo implement a overlap test between object
-        this.hasCollided = this.bounds.isOverlapping(other.bounds);
+        this.hasCollided = other.getBounds().isOverlapping(this.bounds);
         if(this.hasCollided){
             this.otherColliders.add(other);
         }

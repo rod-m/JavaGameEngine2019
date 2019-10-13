@@ -7,6 +7,7 @@ import processing.core.PVector;
 public class PhysicsComponent extends Component {
     private PVector velocity = new PVector(0,0,0);
     public float maxSpeed = 5f;
+    private float friction = 0.9f;
     private BoxCollider2D boxCollider2D;
     public PhysicsComponent(Sprite g, BoxCollider2D b){
         super(g);
@@ -14,12 +15,15 @@ public class PhysicsComponent extends Component {
     }
     @Override
     public void update() {
+        velocity.mult(friction);
         if(velocity.mag() > maxSpeed){
             velocity.setMag(maxSpeed);
         }
         if(this.boxCollider2D.getOtherColliders().size() > 0){
             for(BoxCollider2D otherBoxCollider: this.boxCollider2D.getOtherColliders()){
                 // has hit do something
+                this.velocity.x *= -1f;
+                this.velocity.y *= -1f;
             }
             this.boxCollider2D.getOtherColliders().clear();
         }

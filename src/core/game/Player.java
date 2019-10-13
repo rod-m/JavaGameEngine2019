@@ -12,9 +12,8 @@ public class Player extends Sprite implements MoveAble {
     public float acceleration = 2f;
     public Player(PApplet p, int x, int y, int w, int h) {
         super(p, x, y, w, h);
-        this.parent = p;
         this.size = new PVector(w, h, 0);
-        physicsComponent = new PhysicsComponent(this);
+        physicsComponent = new PhysicsComponent(this, this.boxCollider2D);
     }
 
     @Override
@@ -22,6 +21,7 @@ public class Player extends Sprite implements MoveAble {
         super.update();
         // platform rectangle
         parent.pushMatrix();
+            parent.rectMode(PApplet.CENTER);
             parent.translate(this.position.x, this.position.y);
             parent.fill(0,0,200, 200);
             this.parent.rect(0, 0, this.size.x, this.size.y);

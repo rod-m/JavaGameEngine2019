@@ -16,6 +16,7 @@ public class Platform extends Sprite {
     public void update(){
         super.update();
         parent.pushMatrix();
+       parent.rectMode(PApplet.CENTER);
        // platform rectangle
        parent.translate(this.position.x, this.position.y);
         this.parent.rect(0, 0, this.size.x,this.size.y);

@@ -22,17 +22,19 @@ public class Rectangle {
     public void setBottomLeft(Point bottomLeft) {
         this.bottomLeft = bottomLeft;
     }
-    public boolean isOverlapping(Rectangle other){
-        // check if top bottom not overlapping
-        if(this.topRight.getY() > other.bottomLeft.getY() ||
-                    this.bottomLeft.getY() < other.topRight.getY()){
+    public boolean isOverlapping(Rectangle other) {
+        if (this.topRight.getY() > other.bottomLeft.getY()
+                || this.bottomLeft.getY() < other.topRight.getY()) {
+
             return false;
         }
-        //check sides
-        if(this.topRight.getX() < other.bottomLeft.getX() ||
-                this.bottomLeft.getX() > other.topRight.getX()){
+
+        if (this.topRight.getX() < other.bottomLeft.getX()
+                || this.bottomLeft.getX() > other.topRight.getX()) {
+
             return false;
         }
+
         return true;
     }
     public void updateBounds(float x, float y){
