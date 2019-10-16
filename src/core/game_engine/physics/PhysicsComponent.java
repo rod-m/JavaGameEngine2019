@@ -25,8 +25,8 @@ public class PhysicsComponent extends Component {
        if(this.boxCollider2D.otherColliders.size() > 0){
            for(BoxCollider2D b : this.boxCollider2D.otherColliders){
                // move player relative to what it collided with
-               //velocity.x = 0;
-               //velocity.y = 0;
+               velocity.x = 0;
+               velocity.y = 0;
                System.out.println("collided!");
            }
            this.boxCollider2D.otherColliders.clear();

@@ -20,11 +20,7 @@ public class Rectangle {
      public boolean isOverLapping(Rectangle other){
         // if is not overrlapping return false
          // is it above
-         System.out.println("isOverLapping "+topRight.getY() + " < " + other.bottomLeft.getY());
-         if(topRight.getY() > other.bottomLeft.getY()){
-             return false;
-         }
-         if(bottomLeft.getY() < other.topRight.getY()){
+         if(topRight.getY() > other.bottomLeft.getY() || bottomLeft.getY() < other.topRight.getY()){
              return false;
          }
          // left
