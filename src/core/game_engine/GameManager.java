@@ -21,7 +21,7 @@ public class GameManager {
             Sprite gA = this.game_objects.get(i);
             gA.update();
             for(int j = i + 1; j <this.game_objects.size(); j++){
-                Sprite gB = this.game_objects.get(i);
+                Sprite gB = this.game_objects.get(j);
                 gA.boxCollider2D.check_collisions(gB.boxCollider2D);
             }
         }

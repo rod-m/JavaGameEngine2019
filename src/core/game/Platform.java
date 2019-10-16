@@ -12,13 +12,18 @@ public class Platform extends Sprite {
         super(p, x, y, w, h);
         this.parent = p;
         this.size = new PVector(w,h,0);
-        this.position = new PVector(x, y, 0);
-        boxCollider2D = new BoxCollider2D(this, w, h);
+
+        this.boxCollider2D = new BoxCollider2D(this, w, h);
     }
    @Override
     public void update(){
+       super.update();
+       parent.pushMatrix();
        // platform rectangle
-        this.parent.rect(this.position.x, this.position.y, this.size.x,this.size.y);
+       parent.rectMode(PApplet.CENTER);
+       parent.translate(this.position.x, this.position.y);
+       this.parent.rect(0, 0, this.size.x, this.size.y);
+       parent.popMatrix();
     }
 
 }

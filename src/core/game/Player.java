@@ -16,7 +16,7 @@ public class Player extends Sprite implements MoveAble {
         super(p, x, y, w, h);
         this.parent = p;
         this.size = new PVector(w, h, 0);
-        this.position = new PVector(x, y, 0);
+
         boxCollider2D = new BoxCollider2D(this, w, h);
         physicsComponent = new PhysicsComponent(this, boxCollider2D);
     }
@@ -26,6 +26,7 @@ public class Player extends Sprite implements MoveAble {
         super.update();
         parent.pushMatrix();
         // platform rectangle
+        parent.rectMode(PApplet.CENTER);
         parent.translate(this.position.x, this.position.y);
         this.parent.rect(0, 0, this.size.x, this.size.y);
         parent.popMatrix();

@@ -15,6 +15,7 @@ public abstract class GameObject {
     public GameObject(PApplet p){
         this.parent = p;
         this.position = new PVector(0,0,0);
+        this.next_position = new PVector(0,0,0);
     }
     public abstract void update();
     public void addComponentList(Component c){

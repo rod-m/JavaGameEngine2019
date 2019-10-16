@@ -12,7 +12,7 @@ public class BoxCollider2D extends Component {
     public ArrayList<BoxCollider2D> otherColliders = new ArrayList<>();
     public BoxCollider2D(Sprite g, float w, float h){
         super(g);
-        bounds = new Rectangle(gameObject.position.x, gameObject.position.y, w, h);
+        this.bounds = new Rectangle(gameObject.position.x, gameObject.position.y, w, h);
     }
     @Override
     protected void update() {
