@@ -14,15 +14,16 @@ public class TestGame {
     public void start(){
         game_manager = new GameManager(this.parent);
 
-
         // add player
-        player = new Player(this.parent, 300,200, 10, 10);
+        player = new Player(this.parent, 300,100, 20, 20);
         playerInput = new InputController(player);
         game_manager.add_game_object(player);
 
-        gamePlatform = new Platform(this.parent, 30,400, 500, 80);
+        gamePlatform = new Platform(this.parent, 150,300, 200, 80);
 
         game_manager.add_game_object(gamePlatform);
+
+
     }
     public void update(){
         playerInput.checkInput();

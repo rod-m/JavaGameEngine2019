@@ -20,12 +20,10 @@ public class GameManager {
         for(int i = 0; i < this.game_objects.size(); i++){
             Sprite gA = this.game_objects.get(i);
             gA.update();
-            for(int j = i + 1; j < this.game_objects.size(); j++){
+            for(int j = i + 1; j <this.game_objects.size(); j++){
                 Sprite gB = this.game_objects.get(j);
-                // use layers to seperate moving from static
-               gA.boxCollider2D.check_Collisions(gB.boxCollider2D);
+                gA.boxCollider2D.check_collisions(gB.boxCollider2D);
             }
-
         }
     }
 }

@@ -6,31 +6,21 @@ import core.game_engine.Sprite;
 import java.util.ArrayList;
 
 public class BoxCollider2D extends Component {
+    // bounds rectangle
+    public Rectangle bounds;
     private boolean hasCollided = false;
-    private Rectangle bounds;
-    public Rectangle getBounds() {
-        return this.bounds;
-    }
-    private ArrayList<BoxCollider2D> otherColliders = new ArrayList<>();
-
-    public ArrayList<BoxCollider2D> getOtherColliders() {
-        return otherColliders;
-    }
-
+    public ArrayList<BoxCollider2D> otherColliders = new ArrayList<>();
     public BoxCollider2D(Sprite g, float w, float h){
         super(g);
         this.bounds = new Rectangle(gameObject.position.x, gameObject.position.y, w, h);
-        // update next next
     }
     @Override
-    public void update() {
-        this.bounds.updateBounds(this.gameObject.next_position.x, this.gameObject.next_position.y);
-
+    protected void update() {
+        this.bounds.updateBounds(gameObject.position.x, gameObject.position.y);
     }
-    public void check_Collisions(BoxCollider2D other){
-        // todo implement a overlap test between object
-        this.hasCollided = other.getBounds().isOverlapping(this.bounds);
-        if(this.hasCollided){
+    public void check_collisions(BoxCollider2D other){
+        hasCollided = bounds.isOverLapping(other.bounds);
+        if(hasCollided){
             this.otherColliders.add(other);
         }
     }
