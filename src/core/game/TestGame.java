@@ -23,6 +23,8 @@ public class TestGame {
 
         game_manager.add_game_object(gamePlatform);
 
+        CollectableThing collectableThing = new CollectableThing(parent, 300, 300, 20, 20);
+        game_manager.add_game_object(collectableThing);
 
     }
     public void update(){
