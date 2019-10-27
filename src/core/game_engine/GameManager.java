@@ -22,8 +22,14 @@ public class GameManager {
             gA.update();
             for(int j = i + 1; j <this.game_objects.size(); j++){
                 Sprite gB = this.game_objects.get(j);
-                gA.boxCollider2D.check_collisions(gB.boxCollider2D);
+                // if gA is static don't check collisions.
+                // CHECk that MOVING objects are added to game_objects before other types
+                if(gA.getLayerType() == LayerTypes.MOVING && gB.getLayerType() != LayerTypes.BACKGROUND){
+                    gA.boxCollider2D.check_collisions(gB.boxCollider2D);
+                }
+
             }
         }
     }
+
 }
