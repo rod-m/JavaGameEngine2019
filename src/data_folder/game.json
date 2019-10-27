@@ -1,0 +1,9 @@
+{
+  "name": "My Game Data",
+  "player": [{
+    "layerType": 1,
+    "x": 300,
+    "name": "Sprite",
+    "y": 100
+  }]
+}

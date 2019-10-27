@@ -12,6 +12,13 @@ public class GameManager {
         // add gameobject to list
         this.game_objects.add(g);
     }
+
+    public ArrayList<Sprite> getGame_objects() {
+        return game_objects;
+    }
+    public void add_sprite_array(ArrayList<Sprite> newSprites){
+        this.game_objects.addAll(newSprites);
+    }
     public void startup(){
         // initialise the list
         this.game_objects = new ArrayList<Sprite>();
