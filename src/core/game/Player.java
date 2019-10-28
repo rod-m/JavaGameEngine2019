@@ -6,6 +6,7 @@ import core.game_engine.physics.PhysicsComponent;
 import processing.core.PApplet;
 import processing.core.PVector;
 import core.game_engine.GameObject;
+import processing.data.JSONObject;
 
 public class Player extends Sprite implements MoveAble {
     public PVector size;
@@ -28,6 +29,7 @@ public class Player extends Sprite implements MoveAble {
         // platform rectangle
         parent.rectMode(PApplet.CENTER);
         parent.translate(this.position.x, this.position.y);
+        this.parent.fill(255);
         this.parent.rect(0, 0, this.size.x, this.size.y);
         parent.popMatrix();
     }
@@ -53,4 +55,6 @@ public class Player extends Sprite implements MoveAble {
     public void moveDown() {
         physicsComponent.setVelocity(0, acceleration);
     }
+
+
 }

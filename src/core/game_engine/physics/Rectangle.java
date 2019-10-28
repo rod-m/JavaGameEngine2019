@@ -3,7 +3,26 @@ package core.game_engine.physics;
 public class Rectangle {
     private float x, y, width, height;
     private Point topRight = new Point(1,1);
+
+    public float getHeight() {
+        return height;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public Point getTopRight() {
+        return topRight;
+    }
+
+
     private Point bottomLeft = new Point(-1,-1);
+
+    public Point getBottomLeft() {
+        return bottomLeft;
+    }
+
     public Rectangle(float _x, float _y, float w, float h){
         width = w;
         height = h;
@@ -29,4 +48,16 @@ public class Rectangle {
          }
         return true;
      }
+    public boolean getIsTouchingAbove(Rectangle other){
+        return other.topRight.getY() <= this.bottomLeft.getY() && other.topRight.getY() > this.topRight.getY();
+    }
+    public boolean getIsTouchingBelow(Rectangle other){
+        return other.bottomLeft.getY() >= this.topRight.getY() && other.bottomLeft.getY() < this.bottomLeft.getY();
+    }
+    public boolean getIsTouchingRight(Rectangle other){
+        return other.topRight.getX() >= this.bottomLeft.getX() && other.topRight.getX() < this.topRight.getX();
+    }
+    public boolean getIsTouchingLeft(Rectangle other){
+        return other.bottomLeft.getX() <= this.topRight.getX() && other.bottomLeft.getX() > this.bottomLeft.getX();
+    }
 }

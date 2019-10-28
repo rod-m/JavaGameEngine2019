@@ -22,6 +22,7 @@ public class Platform extends Sprite {
        // platform rectangle
        parent.rectMode(PApplet.CENTER);
        parent.translate(this.position.x, this.position.y);
+       this.parent.fill(255);
        this.parent.rect(0, 0, this.size.x, this.size.y);
        parent.popMatrix();
     }
