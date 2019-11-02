@@ -7,10 +7,11 @@ import processing.core.PVector;
 import core.game_engine.GameObject;
 
 public class Platform extends Sprite {
-    public PVector size;
+
 
     public Platform(PApplet p, int x, int y, int w, int h){
         super(p, x, y, w, h);
+        this.type = "Platform";
         this.parent = p;
         this.size = new PVector(w,h,0);
         layerType = LayerTypes.STATIC;

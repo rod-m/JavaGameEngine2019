@@ -8,11 +8,14 @@ import processing.data.JSONObject;
 
 public class Sprite extends GameObject implements Serializable {
     public BoxCollider2D boxCollider2D;
-    public String name = "Sprite";
+    public String name = "My Sprite";
+    public String type = "Sprite";
+    public PVector size;
     public Sprite(PApplet p, float x, float y, float w, float h){
         super(p);
         this.position = new PVector(x, y, 0);
         this.next_position = new PVector(x, y, 0);
+        this.size = new PVector(w, h);
     }
 
     @Override
@@ -27,8 +30,10 @@ public class Sprite extends GameObject implements Serializable {
         JSONObject sprite_data = new JSONObject();
         sprite_data.setInt("x", (int)this.position.x);
         sprite_data.setInt("y", (int)this.position.y);
+        sprite_data.setInt("w", (int)this.size.x);
+        sprite_data.setInt("h", (int)this.size.y);
         sprite_data.setString("name", this.name);
-        sprite_data.setInt("layerType", this.layerType.ordinal());
+        sprite_data.setString("type", this.type);
         return sprite_data;
     }
 

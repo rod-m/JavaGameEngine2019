@@ -17,6 +17,7 @@ public class Player extends Sprite implements MoveAble {
 
         super(p, x, y, w, h);
         this.parent = p;
+        this.type = "Player";
         this.size = new PVector(w, h, 0);
         layerType = LayerTypes.MOVING;
         boxCollider2D = new BoxCollider2D(this, w, h);
