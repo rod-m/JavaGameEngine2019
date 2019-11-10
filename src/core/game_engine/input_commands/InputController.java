@@ -37,7 +37,8 @@ public class InputController {
             inputHandler.moveLeft();
         }else if(right){
             inputHandler.moveRight();
-        }else if(up){
+        }
+        if(up){
             inputHandler.moveUp();
         }else if(down){
             inputHandler.moveDown();

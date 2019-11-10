@@ -13,17 +13,28 @@ public class PhysicsComponent extends Component {
     private float spacer = 0.3f;
     private float gravity = 1.1f;
     private BoxCollider2D boxCollider2D;
+
+    private boolean isGrounded = false;
+
+
     public PhysicsComponent(GameObject g, BoxCollider2D b){
         super(g);
         this.boxCollider2D = b;
 
     }
 
+    public boolean isGrounded() {
+        return isGrounded;
+    }
+
     @Override
     protected void update() {
         if(this.velocity.mag() > this.maxSpeed){
+            float tmpY = this.velocity.y;
             this.velocity.setMag(this.maxSpeed);
+            this.velocity.y = tmpY;
         }
+        this.velocity.y += gravity;
        if(this.boxCollider2D.otherColliders.size() > 0){
            for(BoxCollider2D b : this.boxCollider2D.otherColliders){
                // move player relative to what it collided with
@@ -45,6 +56,9 @@ public class PhysicsComponent extends Component {
     public void setVelocity(float x, float y){
         this.velocity.x += x;
         this.velocity.y += y;
+        if(this.velocity.y < 0){
+            this.isGrounded = false;
+        }
     }
     private void setCollisionSide(BoxCollider2D otherBox2D){
         this.boxCollider2D.findCollisionSide(otherBox2D);
@@ -58,8 +72,13 @@ public class PhysicsComponent extends Component {
                 velocity.y = gravity;
                 break;
             case BOTTOM:
-                this.gameObject.next_position.y = otherTopRight.getY() - this.boxCollider2D.getBounds().getHeight() / 2f - spacer;
-                velocity.y = 0;
+                if(velocity.y >= 0){
+                    this.gameObject.next_position.y = otherTopRight.getY() - this.boxCollider2D.getBounds().getHeight() / 2f + spacer;
+                    velocity.y = 0;
+                    this.isGrounded = true;
+                }
+
+
                 break;
             case LEFT:
                 velocity.x = 0;
@@ -69,6 +88,9 @@ public class PhysicsComponent extends Component {
             case RIGHT:
                 this.gameObject.next_position.x = otherTopRight.getX() + this.boxCollider2D.getBounds().getWidth() / 2f + spacer;
 
+                break;
+            case NONE:
+                this.isGrounded = false;
                 break;
         }
     }

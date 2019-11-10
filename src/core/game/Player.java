@@ -13,6 +13,8 @@ public class Player extends Sprite implements MoveAble {
 
     private PhysicsComponent physicsComponent;
     private float acceleration = 2f;
+    private float jump = 15f;
+
     public Player(PApplet p, int x, int y, int w, int h) {
 
         super(p, x, y, w, h);
@@ -50,7 +52,10 @@ public class Player extends Sprite implements MoveAble {
 
     @Override
     public void moveUp() {
-        physicsComponent.setVelocity(0, -acceleration);
+        if(this.physicsComponent.isGrounded()){
+            physicsComponent.setVelocity(0, -jump);
+        }
+
     }
 
     @Override
