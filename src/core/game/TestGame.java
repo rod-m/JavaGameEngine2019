@@ -48,8 +48,9 @@ public class TestGame {
                 break;
             case EDIT:
                 // level edit mode
-                levelManager.update();
+
                 game_manager.update();
+                levelManager.update();
                 break;
             case RELOAD:
                 // load a level

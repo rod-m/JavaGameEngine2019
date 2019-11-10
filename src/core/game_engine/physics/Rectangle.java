@@ -35,7 +35,15 @@ public class Rectangle {
         topRight.setX(x + width / 2f);
         topRight.setY(y - height / 2f);
     }
-
+    public boolean pointHit(int x, int y){
+        if(x < bottomLeft.getX() || x > topRight.getX()){
+            return false;
+        }
+        if(y > bottomLeft.getY() || y < topRight.getY()){
+            return false;
+        }
+        return true;
+    }
     public boolean isOverLapping(Rectangle other) {
         // if is not over lapping return false
         // is it above

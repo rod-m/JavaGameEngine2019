@@ -1,9 +1,484 @@
 {
-  "name": "My Game Data",
+  "Level 1": [
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 375,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 270,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 270,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 25,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 75,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 125,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 175,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 275,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 325,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 375,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 475,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 425,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 525,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 10,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 50,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 30,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 175,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 275,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 325,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 375,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 425,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 475,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 525,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 390,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 370,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 330,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 310,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 290,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 270,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 230,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 250,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 210,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 190,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 170,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 150,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 130,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 110,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 90,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 575,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 70,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 175,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 275,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 325,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 375,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 425,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 475,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 350,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 425,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 290,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 180,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 220,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 260,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 300,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 340,
+      "type": "Platform"
+    },
+    {
+      "w": 70,
+      "x": 105,
+      "h": 40,
+      "name": "My Sprite",
+      "y": 140,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 325,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 110,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 425,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 210,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 230,
+      "type": "Platform"
+    },
+    {
+      "w": 50,
+      "x": 225,
+      "h": 20,
+      "name": "My Sprite",
+      "y": 110,
+      "type": "Platform"
+    }
+  ],
   "player": [{
-    "layerType": 1,
+    "w": 20,
     "x": 300,
-    "name": "Sprite",
-    "y": 100
+    "h": 20,
+    "name": "My Sprite",
+    "y": 100,
+    "type": "Player"
   }]
 }

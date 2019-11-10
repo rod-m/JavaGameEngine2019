@@ -82,12 +82,23 @@ public class LevelManager {
     }
     private void show_menu(){
         parent.pushMatrix();
-        parent.rectMode(PApplet.CORNERS);
-        parent.fill(255);
-        parent.rect(0,0, parent.width, 25);
-        parent.fill(0);
-        parent.textSize(12);
-        parent.text("Edit mode: KEYS - Exit 1 | Add Platform P | Delete D | Add Collectable C | Save S", 5, 15);
+        if(parent.mouseY < 20 && parent.mouseX < 55){
+            parent.rectMode(PApplet.CORNERS);
+            parent.fill(120, 240);
+            parent.rect(0,0, parent.width, 25);
+            parent.fill(250);
+            parent.textSize(13);
+            parent.text("Edit mode: KEYS - Exit 1 | Add Platform P | Delete D | Add Collectable C | Save S", 5, 15);
+
+        }else{
+            parent.fill(0,255, 0, 250);
+            parent.rect(0,0, 30, 30);
+            parent.textSize(13);
+            parent.fill(0);
+            parent.text("?", 5, 11);
+
+        }
+
         parent.popMatrix();
     }
 
@@ -113,7 +124,17 @@ public class LevelManager {
             case 'D':
             case 'd':
                 System.out.println("Delete Platform");
+                remove_object();
                 break;
+        }
+    }
+    private void remove_object(){
+        // go thru game objects and delete
+        for(int i = 0; i < gameManager.getGame_objects().size(); i++){
+            Sprite gA = gameManager.getGame_objects().get(i);
+            if(gA.boxCollider2D.mouse_over){
+                gameManager.getGame_objects().remove(i);
+            }
         }
     }
     private Sprite add_object(int x, int y, int w, int h){

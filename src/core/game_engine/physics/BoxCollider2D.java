@@ -11,6 +11,7 @@ public class BoxCollider2D extends Component {
     private boolean hasCollided = false;
     private SIDES hitSideV = SIDES.NONE;
     private SIDES hitSide = SIDES.NONE;
+    public boolean mouse_over = false; // flag for mouse interaction
     public SIDES getHitSide() {
         return hitSide;
     }
@@ -28,7 +29,9 @@ public class BoxCollider2D extends Component {
 
     @Override
     protected void update() {
+
         this.bounds.updateBounds(gameObject.position.x, gameObject.position.y);
+        this.mouse_over = this.bounds.pointHit(this.gameObject.parent.mouseX, this.gameObject.parent.mouseY);
     }
 
     public void check_collisions(BoxCollider2D other) {
