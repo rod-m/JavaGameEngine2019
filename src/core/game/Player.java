@@ -62,4 +62,9 @@ public class Player extends Sprite implements MoveAble {
     public void moveDown() {
         physicsComponent.setVelocity(0, acceleration);
     }
+
+    @Override
+    public void drag() {
+        System.out.println("mouse dragged");
+    }
 }

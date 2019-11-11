@@ -106,6 +106,20 @@ public class TestGame {
                 break;
         }
     }
+    public void mouseDragged(){
+
+        switch (gameMode){
+            case START:
+                break;
+            case PLAY:
+                playerInput.mouseDragged();
+                break;
+            case EDIT:
+                break;
+            case RELOAD:
+                break;
+        }
+    }
     private void welcome_screen(){
         parent.pushMatrix();
         parent.translate(parent.width / 4, parent.height/4);

@@ -26,4 +26,5 @@ public class Main extends PApplet {
     public void keyPressed(){
         testGame.keyPressed(key, keyCode);
     }
+    public void mouseDragged(){ testGame.mouseDragged();}
 }

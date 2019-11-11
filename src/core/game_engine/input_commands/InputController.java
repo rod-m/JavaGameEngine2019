@@ -8,13 +8,15 @@ public class InputController {
     MoveRightCommand moveRightCommand;
     MoveUpCommand moveUpCommand;
     MoveDownCommand moveDownCommand;
+    DragCommand dragCommand;
     boolean left, right, up, down;
     public InputController(MoveAble _actor){
         moveLeftCommand = new MoveLeftCommand(_actor);
         moveRightCommand = new MoveRightCommand(_actor);
         moveUpCommand = new MoveUpCommand(_actor);
         moveDownCommand = new MoveDownCommand(_actor);
-        inputHandler = new InputHandler(moveLeftCommand, moveRightCommand, moveUpCommand, moveDownCommand);
+        dragCommand =  new DragCommand(_actor);
+        inputHandler = new InputHandler(moveLeftCommand, moveRightCommand, moveUpCommand, moveDownCommand, dragCommand);
     }
     public void keyHandler(char key, int keycode, boolean active){
         if(key == 'a' || keycode == PApplet.LEFT){
@@ -31,6 +33,9 @@ public class InputController {
             up = false;
             down = false;
         }
+    }
+    public void mouseDragged(){
+        inputHandler.drag();
     }
     public void checkInput(){
         if(left){
