@@ -85,11 +85,7 @@ public class PhysicsComponent extends Component {
                 this.isGrounded = false;
                 break;
         }
-        // Platforms under the player are causing snags especially when jumping
-        // A simple method is to ignore left/right unless there is also a collision with the top side
-        if(this.boxCollider2D.getHitSideV() !=  SIDES.TOP){
-            return;
-        }
+
 
         switch (this.boxCollider2D.getHitSideH()){
 
