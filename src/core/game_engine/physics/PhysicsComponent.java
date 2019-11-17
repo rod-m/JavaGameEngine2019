@@ -15,7 +15,7 @@ public class PhysicsComponent extends Component {
     private BoxCollider2D boxCollider2D;
 
     private boolean isGrounded = false;
-
+    private PVector dir = new PVector(1,0,0);
 
     public PhysicsComponent(GameObject g, BoxCollider2D b){
         super(g);
@@ -59,8 +59,13 @@ public class PhysicsComponent extends Component {
         if(this.velocity.y < 0){
             this.isGrounded = false;
         }
+        dir.x = Math.signum(x);
+        dir.y = Math.signum(y);
     }
-    private void setCollisionSide(BoxCollider2D otherBox2D){
+    public PVector getDir(){
+        return this.dir;
+    }
+    private void setCollisionSide(BoxCollider2D otherBox2D) {
         this.boxCollider2D.findCollisionSide(otherBox2D);
         Point otherTopRight = otherBox2D.getBounds().getTopRight();
         Point otherBottonLeft = otherBox2D.getBounds().getBottomLeft();

@@ -8,14 +8,17 @@ public class InputController {
     MoveRightCommand moveRightCommand;
     MoveUpCommand moveUpCommand;
     MoveDownCommand moveDownCommand;
-    boolean left, right, up, down;
+    FireCommand fireCommand;
+    boolean left, right, up, down, fire;
     public InputController(MoveAble _actor){
         moveLeftCommand = new MoveLeftCommand(_actor);
         moveRightCommand = new MoveRightCommand(_actor);
         moveUpCommand = new MoveUpCommand(_actor);
         moveDownCommand = new MoveDownCommand(_actor);
-        inputHandler = new InputHandler(moveLeftCommand, moveRightCommand, moveUpCommand, moveDownCommand);
+        fireCommand = new FireCommand(_actor);
+        inputHandler = new InputHandler(moveLeftCommand, moveRightCommand, moveUpCommand, moveDownCommand, fireCommand);
     }
+
     public void keyHandler(char key, int keycode, boolean active){
         if(key == 'a' || keycode == PApplet.LEFT){
             left = active;
@@ -25,6 +28,8 @@ public class InputController {
             up = active;
         }else if(key == 's' || keycode == PApplet.DOWN){
             down = active;
+        }else if(key == ' ' || keycode == PApplet.SHIFT){
+            fire = active;
         }else{
             left = false;
             right = false;
@@ -42,6 +47,10 @@ public class InputController {
             inputHandler.moveUp();
         }else if(down){
             inputHandler.moveDown();
+        }
+        if(fire){
+            fire = false;
+            inputHandler.fire();
         }
     }
 }

@@ -1,4 +1,5 @@
 package core.game;
+import core.game_engine.GameManager;
 import core.game_engine.LayerTypes;
 import core.game_engine.Sprite;
 import core.game_engine.input_commands.MoveAble;
@@ -61,5 +62,18 @@ public class Player extends Sprite implements MoveAble {
     @Override
     public void moveDown() {
         physicsComponent.setVelocity(0, acceleration);
+    }
+
+    @Override
+    public void fire() {
+        // creat bullets
+        System.out.println("Fire");
+        PVector bulletPos = this.position.copy();
+        bulletPos.x = this.position.x + this.size.x * 0.65f * physicsComponent.getDir().x;
+        bulletPos.y = this.position.y + this.size.y * 0.65f * physicsComponent.getDir().y;
+
+        Projectile bullet = new Projectile(parent, bulletPos.x, bulletPos.y, 10, 10);
+        GameManager.Instantiate(bullet);
+        bullet.Shoot(physicsComponent.getDir());
     }
 }
