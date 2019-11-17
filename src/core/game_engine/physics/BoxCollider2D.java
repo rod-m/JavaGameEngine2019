@@ -63,19 +63,22 @@ public class BoxCollider2D extends Component {
         } else if (isTouchingBelow) {
             hitSideV = SIDES.TOP;
         }
-        hitSide = hitSideV;
-        // do side?
-        if (hitSideV == SIDES.NONE) {
-            boolean isTouchingRight = this.bounds.getIsTouchingRight(otherBox2D.getBounds());
-            boolean isTouchingLeft = false;
-            if (!isTouchingRight) {
-                isTouchingLeft = this.bounds.getIsTouchingLeft(otherBox2D.getBounds());
-            }
-            if (isTouchingLeft) {
-                hitSide = SIDES.LEFT;
-            } else if (isTouchingRight) {
-                hitSide = SIDES.RIGHT;
-            }
+        hitSideH = SIDES.NONE;
+        // check proximity to a platform below
+        float distanceAbove = Math.abs(otherBox2D.getBounds().getTopRight().getY() - this.bounds.getBottomLeft().getY());
+        if(distanceAbove < 1f){
+            return;
+        }
+        boolean isTouchingRight = this.bounds.getIsTouchingRight(otherBox2D.getBounds());
+        boolean isTouchingLeft = false;
+
+        if (!isTouchingRight) {
+            isTouchingLeft = this.bounds.getIsTouchingLeft(otherBox2D.getBounds());
+        }
+        if (isTouchingLeft) {
+            hitSideH = SIDES.LEFT;
+        } else if (isTouchingRight) {
+            hitSideH = SIDES.RIGHT;
         }
     }
 
