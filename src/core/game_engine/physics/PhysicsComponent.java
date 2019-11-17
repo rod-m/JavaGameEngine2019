@@ -65,33 +65,49 @@ public class PhysicsComponent extends Component {
         Point otherTopRight = otherBox2D.getBounds().getTopRight();
         Point otherBottonLeft = otherBox2D.getBounds().getBottomLeft();
         // switch case for the side hit...
-        switch (this.boxCollider2D.getHitSide()){
-            case TOP:
-                // put this object on the bottom
-                this.gameObject.next_position.y = otherBottonLeft.getY() + this.boxCollider2D.getBounds().getHeight() / 2f + spacer;
-                velocity.y = gravity;
-                break;
+        switch (this.boxCollider2D.getHitSideV()) {
             case BOTTOM:
-                if(velocity.y >= 0){
+                if (velocity.y >= 0.0f) {
                     this.gameObject.next_position.y = otherTopRight.getY() - this.boxCollider2D.getBounds().getHeight() / 2f + spacer;
-                    velocity.y = 0;
+                    velocity.y = 0f;
                     this.isGrounded = true;
                 }
-
-
                 break;
-            case LEFT:
-                velocity.x = 0;
-                this.gameObject.next_position.x = otherBottonLeft.getX() - this.boxCollider2D.getBounds().getWidth() / 2f - spacer;
-
+            case TOP:
+                // put this object on the bottom
+                if (velocity.y < -0.01f) {
+                    this.gameObject.next_position.y = otherBottonLeft.getY() + this.boxCollider2D.getBounds().getHeight() / 2f + spacer;
+                    velocity.y = gravity;
+                }
                 break;
-            case RIGHT:
-                this.gameObject.next_position.x = otherTopRight.getX() + this.boxCollider2D.getBounds().getWidth() / 2f + spacer;
 
-                break;
             case NONE:
                 this.isGrounded = false;
                 break;
+        }
+        // Platforms under the player are causing snags especially when jumping
+        // A simple method is to ignore left/right unless there is also a collision with the top side
+        if(this.boxCollider2D.getHitSideV() !=  SIDES.TOP){
+            return;
+        }
+
+        switch (this.boxCollider2D.getHitSideH()){
+
+            case LEFT:
+               if(velocity.x > 0.01f){  // checking x if moving greater than 0.01f because the float value is never exactly zero
+                   this.gameObject.next_position.x = otherBottonLeft.getX() - this.boxCollider2D.getBounds().getWidth() / 2f - spacer;
+                   velocity.x = 0f;
+               }
+
+                break;
+            case RIGHT:
+                if(velocity.x < -0.01f){ // checking x if moving left less than 0.01f because the float value is never exactly zero
+                    this.gameObject.next_position.x = otherTopRight.getX() + this.boxCollider2D.getBounds().getWidth() / 2f + spacer;
+                    velocity.x = 0f;
+                }
+
+                break;
+
         }
     }
 }
