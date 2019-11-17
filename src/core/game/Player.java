@@ -13,7 +13,7 @@ public class Player extends Sprite implements MoveAble {
 
     private PhysicsComponent physicsComponent;
     private float acceleration = 2f;
-    private float jump = 15f;
+    private float jump = 11f;
 
     public Player(PApplet p, int x, int y, int w, int h) {
 

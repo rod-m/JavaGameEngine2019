@@ -474,9 +474,9 @@
     }
   ],
   "player": [{
-    "w": 20,
+    "w": 30,
     "x": 300,
-    "h": 20,
+    "h": 30,
     "name": "My Sprite",
     "y": 100,
     "type": "Player"

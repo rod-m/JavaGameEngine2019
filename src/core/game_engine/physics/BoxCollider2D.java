@@ -63,26 +63,20 @@ public class BoxCollider2D extends Component {
         } else if (isTouchingBelow) {
             hitSideV = SIDES.TOP;
         }
-        hitSideH = SIDES.NONE;
-        // problem to fix for side hits when grounded
-       
-            // is the platform below?
-
-        float ditanceAbove = Math.abs(otherBox2D.getBounds().getTopRight().getY() - this.bounds.getBottomLeft().getY());
-        if (ditanceAbove < 1f) {
-            return;
+        hitSide = hitSideV;
+        // do side?
+        if (hitSideV == SIDES.NONE) {
+            boolean isTouchingRight = this.bounds.getIsTouchingRight(otherBox2D.getBounds());
+            boolean isTouchingLeft = false;
+            if (!isTouchingRight) {
+                isTouchingLeft = this.bounds.getIsTouchingLeft(otherBox2D.getBounds());
+            }
+            if (isTouchingLeft) {
+                hitSide = SIDES.LEFT;
+            } else if (isTouchingRight) {
+                hitSide = SIDES.RIGHT;
+            }
         }
-        boolean isTouchingRight = this.bounds.getIsTouchingRight(otherBox2D.getBounds());
-        boolean isTouchingLeft = false;
-        if (!isTouchingRight) {
-            isTouchingLeft = this.bounds.getIsTouchingLeft(otherBox2D.getBounds());
-        }
-        if (isTouchingLeft) {
-            hitSideH = SIDES.LEFT;
-        } else if (isTouchingRight) {
-            hitSideH = SIDES.RIGHT;
-        }
-
     }
 
 

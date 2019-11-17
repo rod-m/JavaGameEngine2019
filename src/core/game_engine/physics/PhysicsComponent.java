@@ -103,7 +103,9 @@ public class PhysicsComponent extends Component {
                 }
 
                 break;
-
+            case NONE:
+                this.isGrounded = false;
+                break;
         }
     }
 }
