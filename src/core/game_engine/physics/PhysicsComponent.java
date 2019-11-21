@@ -1,9 +1,6 @@
 package core.game_engine.physics;
 
-import core.game_engine.Component;
-import core.game_engine.GameObject;
-import core.game_engine.LayerTypes;
-import core.game_engine.Sprite;
+import core.game_engine.*;
 import processing.core.PVector;
 
 public class PhysicsComponent extends Component {
@@ -52,6 +49,10 @@ public class PhysicsComponent extends Component {
        this.velocity.mult(friction);
        this.gameObject.position = this.gameObject.next_position.copy();
        this.gameObject.next_position.add(this.velocity);
+
+       // camera follow system using static instances to update the game manager
+        GameManager.CAMERA_FOLLOW(this.gameObject.position);
+
     }
     public void setVelocity(float x, float y){
         this.velocity.x += x;
@@ -59,10 +60,11 @@ public class PhysicsComponent extends Component {
         if(this.velocity.y < 0){
             this.isGrounded = false;
         }
-        dir.x = Math.signum(x);
-        dir.y = Math.signum(y);
+
     }
     public PVector getDir(){
+        this.dir.x = Math.signum(this.velocity.x);
+        this.dir.y = Math.signum(this.velocity.y);
         return this.dir;
     }
     private void setCollisionSide(BoxCollider2D otherBox2D) {
@@ -110,5 +112,6 @@ public class PhysicsComponent extends Component {
                 break;
 
         }
+
     }
 }

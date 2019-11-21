@@ -18,6 +18,7 @@ public class TestGame {
     DataManager dataManager;
     GameMode gameMode = GameMode.START;
     LevelManager levelManager;
+
     public TestGame(PApplet p){
         this.parent = p;
     }

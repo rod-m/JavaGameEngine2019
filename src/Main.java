@@ -1,5 +1,8 @@
 import core.game.TestGame;
 import processing.core.PApplet;
+
+import java.lang.reflect.Field;
+
 public class Main extends PApplet {
     private int WIDTH = 600, HEIGHT = 400;
     private TestGame testGame;
@@ -10,6 +13,7 @@ public class Main extends PApplet {
         background(0);
         testGame = new TestGame(this);
         testGame.start();
+
     }
     public void draw(){
         background(0);

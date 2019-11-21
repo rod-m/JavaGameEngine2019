@@ -6,7 +6,6 @@ import core.game_engine.data_management.DataManager;
 import processing.core.PApplet;
 import processing.data.JSONArray;
 import processing.data.JSONObject;
-
 import java.util.ArrayList;
 
 public class LevelManager {
@@ -20,6 +19,7 @@ public class LevelManager {
     boolean mouse_down = false;
     DataManager dataManager;
     ArrayList<Sprite> loaded_game_objects;
+    public float screenMove = 10f; // amount to move the virtual camera
     public LevelManager(PApplet p, GameManager g){
 
         parent = p;
@@ -126,6 +126,35 @@ public class LevelManager {
                 System.out.println("Delete Platform");
                 remove_object();
                 break;
+            case '.':
+            case '>':
+                screenMove += 5f;
+                currentKey = '0';
+                break;
+            case ',':
+            case '<':
+                screenMove -= 5f;
+                currentKey = '0';
+                break;
+
+        }
+        switch(parent.keyCode){
+            case PApplet.UP:
+                GameManager.MOVE_CAMERA(0f, -screenMove);
+                currentKey = '0';
+                break;
+            case PApplet.DOWN:
+                GameManager.MOVE_CAMERA(0f, screenMove);
+                currentKey = '0';
+                break;
+            case PApplet.LEFT:
+                GameManager.MOVE_CAMERA(-screenMove, 0f);
+                currentKey = '0';
+                break;
+            case PApplet.RIGHT:
+                GameManager.MOVE_CAMERA(screenMove, 0f);
+                currentKey = '0';
+                break;
         }
     }
     private void remove_object(){
@@ -138,6 +167,11 @@ public class LevelManager {
         }
     }
     private Sprite add_object(int x, int y, int w, int h){
+        // adjust platform placement as the mouseX, mouseY is relative to the screen view
+        // the camera transpose x,y needs to be subtracted to correct the virtual position
+        x -= GameManager.CAMERA_POSITION().x;
+        y -= GameManager.CAMERA_POSITION().y;
+
         Sprite sprite = null;
         switch (itemType){
             case "Platform":
@@ -156,6 +190,7 @@ public class LevelManager {
                 sprite = player;
                 break;
         }
+
         return sprite;
     }
     private int grid_placement(int num, int sizeOfGrid)
