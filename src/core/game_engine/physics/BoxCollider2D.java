@@ -1,6 +1,7 @@
 package core.game_engine.physics;
 
 import core.game_engine.Component;
+import core.game_engine.GameManager;
 import core.game_engine.Sprite;
 
 import java.util.ArrayList;
@@ -36,7 +37,11 @@ public class BoxCollider2D extends Component {
     protected void update() {
 
         this.bounds.updateBounds(gameObject.position.x, gameObject.position.y);
-        this.mouse_over = this.bounds.pointHit(this.gameObject.parent.mouseX, this.gameObject.parent.mouseY);
+        // this does not work if the camera is transposed!
+        //this.mouse_over = this.bounds.pointHit(this.gameObject.parent.mouseX, this.gameObject.parent.mouseY);
+        // instead use camera pos
+        this.mouse_over = this.bounds.pointHit((int)(this.gameObject.parent.mouseX - GameManager.CAMERA_POSITION().x)
+                , (int)(this.gameObject.parent.mouseY-GameManager.CAMERA_POSITION().y));
     }
 
     public void check_collisions(BoxCollider2D other) {

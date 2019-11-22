@@ -7,6 +7,7 @@ public class GameManager {
     private PApplet parent;
     private ArrayList<Sprite> game_objects;
     private static  GameManager Instance;
+
     private PVector cameraTranspose = new PVector(0,0,0);
     private PVector screenCentre = new PVector(0,0,0);
     public static PVector CAMERA_OFFSET = new PVector(0, 50f);
